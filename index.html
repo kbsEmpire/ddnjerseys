@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0A0A0A" />
+    <meta
+      name="description"
+      content="DDN JERSEYS — premium club, national, retro & basketball jerseys delivered across Ghana."
+    />
+    <title>DDN JERSEYS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <nav class="nav" aria-label="Primary">
+        <div class="nav__inner">
+          <a class="brand" href="#home" aria-label="DDN JERSEYS home">
+            <span class="brand__mark">DDN</span>
+            <span class="brand__word">JERSEYS</span>
+          </a>
+
+          <div class="nav__links" role="navigation" aria-label="Site">
+            <a class="nav__link" href="#home">Home</a>
+            <a class="nav__link" href="#shop">Shop</a>
+            <a class="nav__link" href="#contact">Contact</a>
+          </div>
+
+          <div class="nav__actions">
+            <button class="icon-btn" type="button" id="cartBtn" aria-haspopup="dialog" aria-controls="cartDrawer">
+              <span class="icon-btn__icon" aria-hidden="true">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </span>
+              <span class="icon-btn__label">Cart</span>
+              <span class="badge" id="cartQtyBadge" aria-label="Cart item count">0</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="home" aria-label="DDN JERSEYS hero">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <p class="eyebrow reveal" data-reveal="fade-up" data-delay="0">DDN JERSEYS</p>
+            <h1 class="hero__title reveal" data-reveal="fade-up" data-delay="70">WEAR THE GAME</h1>
+            <p class="hero__subtitle reveal" data-reveal="fade-up" data-delay="130">
+              Premium Club, National, Retro &amp; Basketball Jerseys Delivered Across Ghana
+            </p>
+
+            <div class="hero__ctas reveal" data-reveal="fade-up" data-delay="210">
+              <a class="btn btn--primary" href="#shop" id="shopNowBtn">SHOP NOW</a>
+              <a class="btn btn--glass" href="#" id="heroWhatsAppBtn">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                CHAT ON WHATSAPP
+              </a>
+            </div>
+
+            <div class="hero__trust reveal" data-reveal="fade-up" data-delay="290">
+              <div class="trust-pill">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                <span>Secure checkout flow</span>
+              </div>
+              <div class="trust-pill">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                <span>Fast order to WhatsApp</span>
+              </div>
+              <div class="trust-pill">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <span>Premium drops</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero__preview" aria-label="Featured jersey previews">
+            <div class="preview-grid">
+              <div class="preview-card reveal" data-reveal="fade-up" data-delay="120">
+                <span class="mini-badge mini-badge--gold">HOME</span>
+                <img id="previewImg1" alt="Featured jersey preview" loading="eager" decoding="async" />
+              </div>
+              <div class="preview-card reveal" data-reveal="fade-up" data-delay="170">
+                <span class="mini-badge mini-badge--dark">AWAY</span>
+                <img id="previewImg2" alt="Featured jersey preview" loading="eager" decoding="async" />
+              </div>
+              <div class="preview-card reveal" data-reveal="fade-up" data-delay="220">
+                <span class="mini-badge mini-badge--gray">THIRD</span>
+                <img id="previewImg3" alt="Featured jersey preview" loading="eager" decoding="async" />
+              </div>
+              <div class="preview-card reveal" data-reveal="fade-up" data-delay="270">
+                <span class="mini-badge mini-badge--burgundy">RETRO</span>
+                <img id="previewImg4" alt="Featured jersey preview" loading="eager" decoding="async" />
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="shop" id="shop" aria-label="Shop jerseys">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">SHOP</h2>
+              <p class="section-subtitle">Luxury glass panels. Real jersey drops. Built for Ghana delivery.</p>
+            </div>
+            <div class="section-meta" aria-label="Store indicators">
+              <div class="meta-chip">
+                <i class="fa-regular fa-gem" aria-hidden="true"></i>
+                <span>Premium quality</span>
+              </div>
+              <div class="meta-chip">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <span>Accra pickup + nationwide</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="category-bar" role="tablist" aria-label="Category filters">
+            <button class="pill is-active" type="button" data-filter="ALL" role="tab" aria-selected="true">
+              ALL
+            </button>
+            <button class="pill" type="button" data-filter="CLUB" role="tab" aria-selected="false">CLUB</button>
+            <button class="pill" type="button" data-filter="NATIONAL" role="tab" aria-selected="false">
+              NATIONAL
+            </button>
+            <button class="pill" type="button" data-filter="RETRO" role="tab" aria-selected="false">RETRO</button>
+            <button class="pill" type="button" data-filter="BASKETBALL" role="tab" aria-selected="false">
+              BASKETBALL
+            </button>
+            <span class="category-indicator" aria-hidden="true"></span>
+          </div>
+
+          <div class="grid" id="productGrid" aria-live="polite" aria-busy="true"></div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-label="Contact DDN Jerseys">
+        <div class="container">
+          <div class="contact-card">
+            <div class="contact-card__left">
+              <h2 class="section-title">CONTACT</h2>
+              <p class="section-subtitle">
+                For sizing help, availability, and quick ordering — chat instantly on WhatsApp.
+              </p>
+              <div class="contact-actions">
+                <a class="btn btn--glass" id="contactWhatsAppBtn" href="#">
+                  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                  CHAT WITH DDN
+                </a>
+                <div class="contact-note">
+                  <span class="contact-note__label">MoMo Payments</span>
+                  <span class="contact-note__value">+233503532409</span>
+                </div>
+              </div>
+            </div>
+            <div class="contact-card__right" aria-hidden="true">
+              <div class="glow-orb glow-orb--gold"></div>
+              <div class="glow-orb glow-orb--green"></div>
+              <div class="contact-lines"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" aria-label="Footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <span class="footer__logo">DDN JERSEYS</span>
+          <span class="footer__tag">Luxury sportswear storefront</span>
+        </div>
+
+        <div class="footer__social" aria-label="Social links">
+          <a class="social-link" href="#" aria-label="Instagram @oc.felixx">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            <span>@oc.felixx</span>
+          </a>
+          <a class="social-link" href="#" aria-label="Snapchat @oc.felixx">
+            <i class="fa-brands fa-snapchat" aria-hidden="true"></i>
+            <span>@oc.felixx</span>
+          </a>
+          <a class="social-link" href="#" aria-label="TikTok @oc.felixx">
+            <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+            <span>@oc.felixx</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="backdrop" id="drawerBackdrop" hidden></div>
+    <aside
+      class="drawer"
+      id="cartDrawer"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Cart drawer"
+      aria-hidden="true"
+    >
+      <div class="drawer__header">
+        <div>
+          <h3 class="drawer__title">Your Cart</h3>
+          <p class="drawer__subtitle" id="drawerSubtitle">Luxury checkout, fast WhatsApp order.</p>
+        </div>
+        <button class="icon-btn icon-btn--ghost" type="button" id="closeDrawerBtn" aria-label="Close cart">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="drawer__content">
+        <div class="cart-list" id="cartList" aria-live="polite"></div>
+      </div>
+
+      <div class="drawer__footer">
+        <div class="totals">
+          <span class="totals__label">Subtotal</span>
+          <span class="totals__value" id="cartSubtotal">₵0</span>
+        </div>
+        <button class="btn btn--primary btn--full" type="button" id="checkoutBtn">
+          CHECKOUT
+        </button>
+        <p class="drawer__note">
+          By placing an order, you’ll be redirected to WhatsApp to confirm details.
+        </p>
+      </div>
+    </aside>
+
+    <!-- Checkout Modal -->
+    <div class="modal-backdrop" id="modalBackdrop" hidden></div>
+    <section
+      class="modal"
+      id="checkoutModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Checkout"
+      aria-hidden="true"
+    >
+      <div class="modal__header">
+        <div>
+          <h3 class="modal__title">Checkout</h3>
+          <p class="modal__subtitle">Finish in under 60 seconds. Premium flow, no noise.</p>
+        </div>
+        <button class="icon-btn icon-btn--ghost" type="button" id="closeModalBtn" aria-label="Close checkout">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <form id="checkoutForm" novalidate>
+          <div class="form-section">
+            <div class="form-section__title">Customer Details</div>
+            <div class="form-grid">
+              <label class="field">
+                <span class="field__label">Full Name</span>
+                <input class="field__input" name="fullName" autocomplete="name" required placeholder="e.g. Felix Owusu" />
+              </label>
+              <label class="field">
+                <span class="field__label">Phone Number</span>
+                <input
+                  class="field__input"
+                  name="phone"
+                  inputmode="tel"
+                  autocomplete="tel"
+                  required
+                  placeholder="e.g. 0503532409"
+                />
+              </label>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="form-section">
+            <div class="form-section__title">Size Selection</div>
+            <div class="toggle-row" id="sizeToggles" role="group" aria-label="Select size">
+              <button class="toggle" type="button" data-value="S">S</button>
+              <button class="toggle" type="button" data-value="M">M</button>
+              <button class="toggle" type="button" data-value="L">L</button>
+              <button class="toggle" type="button" data-value="XL">XL</button>
+              <button class="toggle" type="button" data-value="XXL">XXL</button>
+            </div>
+            <input type="hidden" name="size" required />
+            <p class="hint" id="sizeHint">Select a size to continue.</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="form-section">
+            <div class="form-section__title">Customization (optional)</div>
+            <div class="form-grid">
+              <label class="field">
+                <span class="field__label">Name</span>
+                <input class="field__input" name="customName" placeholder="e.g. RONALDO" />
+              </label>
+              <label class="field">
+                <span class="field__label">Number</span>
+                <input class="field__input" name="customNumber" inputmode="numeric" placeholder="e.g. 7" />
+              </label>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="form-section">
+            <div class="form-section__title">Delivery Method</div>
+            <div class="toggle-row" id="deliveryToggles" role="group" aria-label="Select delivery method">
+              <button class="toggle is-active" type="button" data-value="Pickup">Pickup</button>
+              <button class="toggle" type="button" data-value="Delivery">Delivery</button>
+            </div>
+            <input type="hidden" name="deliveryMethod" value="Pickup" />
+
+            <div class="reveal-field" id="locationWrap" data-open="false">
+              <label class="field">
+                <span class="field__label">Location</span>
+                <input class="field__input" name="location" placeholder="e.g. East Legon, Accra" />
+              </label>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="form-section">
+            <div class="form-section__title">Payment Method</div>
+            <div class="toggle-row" id="paymentToggles" role="group" aria-label="Select payment method">
+              <button class="toggle is-active" type="button" data-value="Mobile Money">Mobile Money</button>
+              <button class="toggle" type="button" data-value="Pay on Pickup">Pay on Pickup</button>
+            </div>
+            <input type="hidden" name="paymentMethod" value="Mobile Money" />
+
+            <div class="payment-instructions" id="momoInstructions">
+              <div class="payment-instructions__title">MoMo Payments</div>
+              <div class="payment-instructions__value">+233503532409</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="form-section">
+            <button class="btn btn--gold btn--full" type="submit" id="placeOrderBtn">PLACE ORDER</button>
+            <p class="hint">
+              You’ll review your order on WhatsApp before fulfillment.
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Floating WhatsApp -->
+    <a class="wa-float" href="#" id="floatingWhatsApp" aria-label="Chat with us instantly on WhatsApp">
+      <span class="wa-float__icon" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></span>
+      <span class="wa-tooltip" role="tooltip">Chat with us instantly</span>
+    </a>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
+
