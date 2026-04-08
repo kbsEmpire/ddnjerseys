@@ -1,8 +1,8 @@
-/* DDN JERSEYS — single-file storefront logic (no frameworks) */
+/* DON JERSEYS — single-file storefront logic (no frameworks) */
 
 (() => {
-  const WHATSAPP_NUMBER = "233503532409";
-  const CART_KEY = "ddn_cart_v1";
+  const WHATSAPP_NUMBER = "233245432919";
+  const CART_KEY = "don_cart_v1";
 
   const money = (n) => `₵${Number(n || 0).toFixed(0)}`;
 
@@ -430,7 +430,7 @@
   function openWhatsApp(messageOrNull) {
     const msg =
       messageOrNull ||
-      `DDN JERSEYS\n\nHi! I want to chat about jerseys and availability.\n\nMoMo: +233503532409`;
+      `DON JERSEYS\n\nHi! I want to chat about jerseys and availability.\n`;
     window.open(whatsappUrlForMessage(msg), "_blank", "noopener,noreferrer");
   }
 
@@ -476,10 +476,10 @@
 
   function buildOrderMessage(values) {
     const lines = [];
-    lines.push("NEW ORDER – DDN JERSEYS");
-    lines.push("");
+    lines.push("NEW ORDER – DON JERSEYS");
+    lines.push("=====================");
     lines.push("CUSTOMER DETAILS");
-    lines.push("");
+    lines.push("=====================");
     lines.push(`Name: ${values.fullName}`);
     lines.push(`Phone: ${values.phone}`);
     lines.push("");
@@ -491,40 +491,35 @@
     }
 
     lines.push("");
-    lines.push("SIZE");
-    lines.push("");
+    lines.push("SIZE")
     lines.push(values.size);
 
     const hasCustom = Boolean(values.customName || values.customNumber);
     if (hasCustom) {
       lines.push("");
       lines.push("CUSTOMIZATION");
-      lines.push("");
       if (values.customName) lines.push(`Name: ${values.customName}`);
       if (values.customNumber) lines.push(`Number: ${values.customNumber}`);
     }
 
     lines.push("");
     lines.push("DELIVERY METHOD");
-    lines.push("");
     lines.push(values.deliveryMethod);
 
     if (values.deliveryMethod === "Delivery") {
       lines.push("");
       lines.push("LOCATION");
-      lines.push("");
       lines.push(values.location || "-");
     }
 
     lines.push("");
     lines.push("PAYMENT METHOD");
-    lines.push("");
     lines.push(values.paymentMethod);
 
-    lines.push("");
+    lines.push("=================");
     lines.push("TOTAL AMOUNT");
-    lines.push("");
     lines.push(money(cartSubtotal()));
+    lines.push("=================");
 
     return lines.join("\n");
   }
@@ -677,9 +672,9 @@
     els.contactWhatsAppBtn.addEventListener("click", waClick);
 
     // Prevent footer social placeholders from navigating
-    for (const a of document.querySelectorAll(".social-link")) {
-      a.addEventListener("click", (e) => e.preventDefault());
-    }
+    //for (const a of document.querySelectorAll(".social-link")) {
+     // a.addEventListener("click", (e) => e.preventDefault());
+   // }
   }
 
   function init() {
