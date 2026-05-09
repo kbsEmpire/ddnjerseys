@@ -10,110 +10,371 @@
     {
       id: "rm-home",
       name: "Real Madrid Home Jersey",
-      price: 250,
+      price: 150,
       category: "CLUB",
       badge: "HOME",
       image:
-        "images/download-18.webp",
+        "images/realH.webp",
     },
     {
       id: "barca-home",
       name: "Barcelona Home Jersey",
-      price: 250,
+      price: 150,
       category: "CLUB",
       badge: "HOME",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/FC_Barcelona_2015%E2%80%9316_home_kit.jpg/800px-FC_Barcelona_2015%E2%80%9316_home_kit.jpg",
+        "images/barcaH.webp",
     },
     {
-      id: "manu-home",
-      name: "Manchester United Jersey",
-      price: 250,
+      id: "manu-away",
+      name: "Manchester United Away",
+      price: 150,
       category: "CLUB",
-      badge: "HOME",
+      badge: "AWAY",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Manchester_United_2010-11_home_kit.png/800px-Manchester_United_2010-11_home_kit.png",
+        "images/manuA.webp",
     },
     {
       id: "brazil-national",
       name: "Brazil National Jersey",
-      price: 250,
+      price: 150,
       category: "NATIONAL",
-      badge: "HOME",
+      badge: "RETRO",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Brazil_national_football_team_jersey_2010.jpg/800px-Brazil_national_football_team_jersey_2010.jpg",
+        "images/brazilR.webp",
     },
     {
       id: "argentina-national",
       name: "Argentina National Jersey",
-      price: 250,
+      price: 150,
       category: "NATIONAL",
       badge: "HOME",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Argentina_2010_home_jersey.jpg/800px-Argentina_2010_home_jersey.jpg",
+        "images/argentina.webp",
     },
     {
       id: "ghana-black-stars",
       name: "Ghana Black Stars Jersey",
-      price: 250,
+      price: 200,
       category: "NATIONAL",
       badge: "HOME",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Ghana_national_football_team_jersey_2010.jpg/800px-Ghana_national_football_team_jersey_2010.jpg",
+        "images/ghanaH.webp",
     },
     {
-      id: "bulls",
-      name: "Chicago Bulls Jersey",
-      price: 250,
+      id: "golden-state",
+      name: "Golden State Warriors",
+      price: 180,
       category: "BASKETBALL",
-      badge: "AWAY",
+      badge: "HOME",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Chicago_Bulls_jersey.jpg/800px-Chicago_Bulls_jersey.jpg",
+        "images/goldenState.webp",
     },
     {
-      id: "lakers",
+      id: "lakers-away",
       name: "LA Lakers Jersey",
-      price: 250,
+      price: 180,
       category: "BASKETBALL",
-      badge: "THIRD",
+      badge: "HOME",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Los_Angeles_Lakers_jersey.jpg/800px-Los_Angeles_Lakers_jersey.jpg",
+        "images/lakersA.webp",
     },
     {
-      id: "retro-1",
-      name: "Retro Classic Football Jersey",
-      price: 250,
+      id: "cologne-retro",
+      name: "Cologne Retro Jersey",
+      price: 200,
       category: "RETRO",
       badge: "RETRO",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Football_shirt_Italy_1982.jpg/800px-Football_shirt_Italy_1982.jpg",
+        "images/colonR.webp",
     },
     {
-      id: "club-away-1",
-      name: "Elite Club Away Jersey",
-      price: 250,
+      id: "liverpool-retro",
+      name: "Liverpool Retro Jersey",
+      price: 200,
+      category: "RETRO",
+      badge: "RETRO",
+      image:
+        "images/lipoolR.WEBP",
+    },
+    {
+      id: "portugal-home",
+      name: "Portugal Home",
+      price: 150,
+      category: "NATIONAL",
+      badge: "HOME",
+      image:
+        "images/portugalH.webp",
+    },
+    {
+      id: "manu-retro",
+      name: "Man United Retro",
+      price: 200,
+      category: "RETRO",
+      badge: "RETRO",
+      image:
+        "images/manuR.jpeg",
+    },
+    {
+      id: "spain-home",
+      name: "Spain Home Jersey",
+      price: 150,
+      category: "NATIONAL",
+      badge: "HOME",
+      image:
+        "images/spainH.webp",
+    },
+    {
+      id: "celta-retro",
+      name: "Celta Vigo Third ",
+      price: 200,
+      category: "CLUB",
+      badge: "THIRD",
+      image:
+        "images/celtaH.webp",
+    },
+    {
+      id: "barca-retro",
+      name: "Barcelona Retro",
+      price: 200,
+      category: "RETRO",
+      badge: "RETRO",
+      image:
+        "images/barcaR.webp",
+    },
+    {
+      id: "celta-retro-away",
+      name: "Celta Vigo Retro ",
+      price: 200,
+      category: "RETRO",
+      badge: "RETRO",
+      image:
+        "images/celtaA.webp",
+    },
+    {
+      id: "lakers-home",
+      name: "Lakers Home Jersey",
+      price: 180,
+      category: "BASKETBALL",
+      badge: "HOME",
+      image:
+        "images/lakers.webp",
+    },
+    {
+      id: "spain-retro",
+      name: "Spain Retro",
+      price: 200,
+      category: "RETRO",
+      badge: "RETRO",
+      image:
+        "images/spainR.webp",
+    },
+    {
+      id: "tottenham",
+      name: "Hotspurs Away",
+      price: 150,
       category: "CLUB",
       badge: "AWAY",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Football_shirt_Red_away.jpg/800px-Football_shirt_Red_away.jpg",
+        "images/thps.webp",
     },
     {
-      id: "national-away-1",
-      name: "National Away Jersey",
-      price: 250,
+      id: "portugal-away",
+      name: "Portugal Away Jersey",
+      price: 150,
       category: "NATIONAL",
       badge: "AWAY",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Football_shirt_white.jpg/800px-Football_shirt_white.jpg",
+        "images/portuaglA.webp",
     },
     {
-      id: "basketball-retro",
-      name: "Retro Basketball Jersey",
-      price: 250,
+      id: "spurs",
+      name: "NBA SPURS",
+      price: 180,
       category: "BASKETBALL",
+      badge: "AWAY",
+      image:
+        "images/spurs.webp",
+    },
+    {
+      id: "palmeiras",
+      name: "Palmeiras Away Jersey",
+      price: 150,
+      category: "CLUB",
+      badge: "AWAY",
+      image:
+        "images/palmA.webp",
+    },
+    {
+      id: "golden-state-blue",
+      name: "Golden State Away",
+      price: 180,
+      category: "BASKETBALL",
+      badge: "AWAY",
+      image:
+        "images/GS.webp",
+    },
+    {
+      id: "nfl",
+      name: " NFL 1946",
+      price: 150,
+      category: "RETRO",
       badge: "RETRO",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Basketball_jersey.jpg/800px-Basketball_jersey.jpg",
+        "images/NFLblack.webp",
+    },
+    {
+      id: "nfl-49ers",
+      name: "NFL 49ERS",
+      price: 150,
+      category: "RETRO",
+      badge: "RETRO",
+      image:
+        "images/49ers.webp",
+    },
+    {
+      id: "newcastleH",
+      name: "Newcastle Home Jersey",
+      price: 150,
+      category: "CLUB",
+      badge: "HOME",
+      image:
+        "images/newcastleH.webp",
+    },
+    {
+      id: "ham-away",
+      name: "West Ham Away",
+      price: 150,
+      category: "CLUB",
+      badge: "AWAY",
+      image:
+        "images/hamA.webp",
+    },
+    {
+      id: "ghana-away",
+      name: "Ghana Black Stars Away",
+      price: 200,
+      category: "NATIONAL",
+      badge: "AWAY",
+      image:
+        "images/ghanaA.webp",
+    },
+    {
+      id: "germany",
+      name: "Germany Jersey",
+      price: 150,
+      category: "NATIONAL",
+      badge: "HOME",
+      image:
+        "images/germany.webp",
+    },
+    {
+      id: "fulhamA",
+      name: "Fulham Away Jersey",
+      price: 150,
+      category: "CLUB",
+      badge: "AWAY",
+      image:
+        "images/fulhamA.webp",
+    },
+    {
+      id: "forest-away",
+      name: "Nottingham Forest Away",
+      price: 150,
+      category: "CLUB",
+      badge: "AWAY",
+      image:
+        "images/forestA.webp",
+    },
+    {
+      id: "barca",
+      name: "Barcalona Away",
+      price: 150,
+      category: "CLUB",
+      badge: "AWAY",
+      image:
+        "images/barcaA.webp",
+    },
+    {
+      id: "bayern-home",
+      name: "Bayern Munich Home",
+      price: 150,
+      category: "CLUB",
+      badge: "HOME",
+      image:
+        "images/bayernH.webp",
+    },
+    {
+      id: "besiktas",
+      name: "Besiktas Home Jersey",
+      price: 150,
+      category: "CLUB",
+      badge: "HOME",
+      image:
+        "images/besikH.webp",
+    },
+    {
+      id: "bluesH",
+      name: "Chelsea Home Jersey",
+      price: 150,
+      category: "CLUB",
+      badge: "HOME",
+      image:
+        "images/bluesH.webp",
+    },
+    {
+      id: "arsenal",
+      name: "Arsenal Home Jersey",
+      price: 150,
+      category: "CLUB",
+      badge: "HOME",
+      image:
+        "images/arsenalH.webp",
+    },
+    {
+      id: "barca-away",
+      name: "Barcelona Away",
+      price: 150,
+      category: "CLUB",
+      badge: "AWAY",
+      image:
+        "images/barcaA.webp",
+    },
+    {
+      id: "acmilan",
+      name: "AC Milan",
+      price: 150,
+      category: "CLUB",
+      badge: "HOME",
+      image:
+        "images/acH.webp",
+    },
+    {
+      id: "lipool-away",
+      name: "Liverpool Away",
+      price: 150,
+      category: "CLUB",
+      badge: "AWAY",
+      image:
+        "images/lipoolA.webp",
+    },
+    {
+      id: "lipool-home",
+      name: "Liverpool Home",
+      price: 150,
+      category: "CLUB",
+      badge: "HOME",
+      image:
+        "images/lipool.webp",
+    },
+    {
+      id: "NFL36-retro-away",
+      name: "NFL Retro 36",
+      price: 150,
+      category: "RETRO",
+      badge: "RETRO",
+      image:
+        "images/36.webp",
     },
   ];
 
