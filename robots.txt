@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
 
+Sitemap: https://donjerseys.vercel.app/sitemap.xml
