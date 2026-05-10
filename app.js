@@ -32,11 +32,11 @@
       category: "CLUB",
       badge: "AWAY",
       image:
-        "images/manuA.webp",
+        "images/manUA.webp",
     },
     {
       id: "brazil-national",
-      name: "Brazil National Jersey",
+      name: "Brazil National Blue Retro",
       price: 150,
       category: "NATIONAL",
       badge: "RETRO",
@@ -54,7 +54,7 @@
     },
     {
       id: "ghana-black-stars",
-      name: "Ghana Black Stars Jersey",
+      name: "Ghana Black Stars Home",
       price: 200,
       category: "NATIONAL",
       badge: "HOME",
@@ -113,7 +113,7 @@
       category: "RETRO",
       badge: "RETRO",
       image:
-        "images/manuR.jpeg",
+        "images/manuR.webp",
     },
     {
       id: "spain-home",
@@ -185,7 +185,7 @@
       category: "NATIONAL",
       badge: "AWAY",
       image:
-        "images/portuaglA.webp",
+        "images/portugalA.webp",
     },
     {
       id: "spurs",
@@ -330,15 +330,6 @@
       badge: "HOME",
       image:
         "images/arsenalH.webp",
-    },
-    {
-      id: "barca-away",
-      name: "Barcelona Away",
-      price: 150,
-      category: "CLUB",
-      badge: "AWAY",
-      image:
-        "images/barcaA.webp",
     },
     {
       id: "acmilan",
