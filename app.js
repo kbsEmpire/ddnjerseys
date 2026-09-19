@@ -445,7 +445,7 @@
   function openWhatsApp(messageOrNull) {
     const msg =
       messageOrNull ||
-      `DDN JERSEYS\n\nHi! I want to chat about jerseys and availability.\n`;
+      `DON JERSEYS\n\nHi! I want to chat about jerseys and availability.\n`;
     window.open(whatsappUrlForMessage(msg), "_blank", "noopener,noreferrer");
   }
 
@@ -491,7 +491,7 @@
 
   function buildOrderMessage(values) {
     const lines = [];
-    lines.push("NEW ORDER – DDN JERSEYS");
+    lines.push("NEW ORDER – DON JERSEYS");
     lines.push("");
     lines.push("CUSTOMER DETAILS");
     lines.push("");
