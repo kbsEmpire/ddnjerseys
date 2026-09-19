@@ -996,6 +996,96 @@ button, input{font:inherit}
 }
 .reveal[data-reveal="fade-up"]{transform:translateY(16px)}
 
+/* Loading, empty & error states */
+.shop-status{
+  grid-column:1 / -1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  padding:48px 24px;
+  border-radius:var(--radius-xl);
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+  -webkit-backdrop-filter:var(--blur);
+  backdrop-filter:var(--blur);
+  text-align:center;
+}
+.shop-status i{
+  font-size:32px;
+  color:var(--gold);
+  opacity:.85;
+}
+.shop-status__title{
+  margin:0;
+  font-family:"Bebas Neue", Inter, sans-serif;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-size:28px;
+}
+.shop-status__text{
+  margin:0;
+  color:var(--muted);
+  max-width:420px;
+}
+.shop-status__spinner{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.12);
+  border-top-color:var(--gold);
+  animation:spin 800ms linear infinite;
+}
+@keyframes spin{
+  to{transform:rotate(360deg)}
+}
+@keyframes shimmer{
+  0%{background-position:-200% 0}
+  100%{background-position:200% 0}
+}
+.card--skeleton{
+  pointer-events:none;
+}
+.card--skeleton:hover{
+  transform:none;
+  box-shadow:var(--shadow-md);
+}
+.skeleton{
+  background:linear-gradient(90deg, rgba(255,255,255,.04) 25%, rgba(255,255,255,.10) 50%, rgba(255,255,255,.04) 75%);
+  background-size:200% 100%;
+  animation:shimmer 1.4s ease-in-out infinite;
+  border-radius:12px;
+}
+.skeleton--badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  width:56px;
+  height:28px;
+  z-index:2;
+}
+.skeleton--img{
+  width:100%;
+  aspect-ratio:4/3;
+}
+.skeleton--text{
+  height:16px;
+  margin-bottom:10px;
+}
+.skeleton--short{
+  width:60%;
+}
+.skeleton--qty{
+  height:44px;
+  margin-top:4px;
+}
+.skeleton--btn{
+  height:42px;
+  margin-top:12px;
+  border-radius:999px;
+}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .reveal{transition:none; transform:none; opacity:1}
