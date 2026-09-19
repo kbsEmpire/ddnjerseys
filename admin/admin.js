@@ -115,14 +115,14 @@
   let toastTimer = null;
 
   function initSupabase() {
-    if (!window.supabase?.createClient) {
-      showLoginError("Supabase library failed to load.");
-      return null;
-    }
-    if (!SUPABASE_URL || SUPABASE_URL.trim() === "" || SUPABASE_URL.includes('https://favarmsrajwhgrakkpei.supabase.co')) {
-      showLoginError("Supabase credentials not configured. See SUPABASE_SETUP.md");
-      return null;
-    }
+    // if (!window.supabase?.createClient) {
+    //   showLoginError("Supabase library failed to load.");
+    //   return null;
+    // }
+    // if (!SUPABASE_URL || SUPABASE_URL.trim() === "" || SUPABASE_URL.includes('https://favarmsrajwhgrakkpei.supabase.co')) {
+    //   showLoginError("Supabase credentials not configured. See SUPABASE_SETUP.md");
+    //   return null;
+    // }
     return window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
   }
 
