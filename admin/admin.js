@@ -119,7 +119,7 @@
       showLoginError("Supabase library failed to load.");
       return null;
     }
-    if (SUPABASE_URL.includes ('https://favarmsrajwhgrakkpei.supabase.co') || SUPABASE_URL === "") {
+    if (!SUPABASE_URL || SUPABASE_URL.trim() === "" || SUPABASE_URL.includes('https://favarmsrajwhgrakkpei.supabase.co')) {
       showLoginError("Supabase credentials not configured. See SUPABASE_SETUP.md");
       return null;
     }
