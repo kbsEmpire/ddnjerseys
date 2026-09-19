@@ -445,7 +445,7 @@
   function openWhatsApp(messageOrNull) {
     const msg =
       messageOrNull ||
-      `DON JERSEYS\n\nHi! I want to chat about jerseys and availability.\n`;
+      `DDN JERSEYS\n\nHi! I want to chat about jerseys and availability.\n`;
     window.open(whatsappUrlForMessage(msg), "_blank", "noopener,noreferrer");
   }
 
