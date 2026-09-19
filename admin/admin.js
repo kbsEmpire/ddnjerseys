@@ -1,4 +1,4 @@
-/* DDN JERSEYS — Admin Dashboard */
+/* DON JERSEYS — Admin Dashboard */
 
 (() => {
   const SUPABASE_URL = "https://favarmsrajwhgrakkpei.supabase.co";
