@@ -87,14 +87,14 @@
   let supabase = null;
 
   function initSupabase() {
-    if (!window.supabase?.createClient) {
-      console.error("Supabase client library not loaded");
-      return null;
-    }
-    if (SUPABASE_URL === "https://favarmsrajwhgrakkpei.supabase.co" || SUPABASE_ANON_KEY === "sb_publishable_aiVYOvw7ZFVvEHktfyCQjw_5FFFf_37") {
-      console.warn("Supabase credentials not configured");
-      return null;
-    }
+    // if (!window.supabase?.createClient) {
+    //   console.error("Supabase client library not loaded");
+    //   return null;
+    // }
+    // if (SUPABASE_URL === "https://favarmsrajwhgrakkpei.supabase.co" || SUPABASE_ANON_KEY === "sb_publishable_aiVYOvw7ZFVvEHktfyCQjw_5FFFf_37") {
+    //   console.warn("Supabase credentials not configured");
+    //   return null;
+    // }
     return window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
   }
 
