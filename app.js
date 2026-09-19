@@ -1,373 +1,41 @@
-/* DON JERSEYS — single-file storefront logic (no frameworks) */
+/* DON JERSEYS — storefront logic with Supabase product backend */
 
 (() => {
-  const WHATSAPP_NUMBER = "233245432919";
+  // ─── Configuration ───────────────────────────────────────────────
+  const SUPABASE_URL = "https://favarmsrajwhgrakkpei.supabase.co";
+  const SUPABASE_ANON_KEY = "sb_publishable_aiVYOvw7ZFVvEHktfyCQjw_5FFFf_37";
+  const WHATSAPP_NUMBER = "233503532409";
   const CART_KEY = "don_cart_v1";
 
   const money = (n) => `₵${Number(n || 0).toFixed(0)}`;
 
-  const products = [
-    {
-      id: "rm-home",
-      name: "Real Madrid Home Jersey",
-      price: 150,
-      category: "CLUB",
-      badge: "HOME",
-      image:
-        "images/realH.webp",
-    },
-    {
-      id: "barca-home",
-      name: "Barcelona Home Jersey",
-      price: 150,
-      category: "CLUB",
-      badge: "HOME",
-      image:
-        "images/barcaH.webp",
-    },
-    {
-      id: "manu-away",
-      name: "Manchester United Away",
-      price: 150,
-      category: "CLUB",
-      badge: "AWAY",
-      image:
-        "images/manUA.webp",
-    },
-    {
-      id: "brazil-national",
-      name: "Brazil National Blue Retro",
-      price: 150,
-      category: "NATIONAL",
-      badge: "RETRO",
-      image:
-        "images/brazilR.webp",
-    },
-    {
-      id: "argentina-national",
-      name: "Argentina National Jersey",
-      price: 150,
-      category: "NATIONAL",
-      badge: "HOME",
-      image:
-        "images/argentina.webp",
-    },
-    {
-      id: "ghana-black-stars",
-      name: "Ghana Black Stars Home",
-      price: 200,
-      category: "NATIONAL",
-      badge: "HOME",
-      image:
-        "images/ghanaH.webp",
-    },
-    {
-      id: "golden-state",
-      name: "Golden State Warriors",
-      price: 180,
-      category: "BASKETBALL",
-      badge: "HOME",
-      image:
-        "images/goldenState.webp",
-    },
-    {
-      id: "lakers-away",
-      name: "LA Lakers Jersey",
-      price: 180,
-      category: "BASKETBALL",
-      badge: "HOME",
-      image:
-        "images/lakersA.webp",
-    },
-    {
-      id: "cologne-retro",
-      name: "Cologne Retro Jersey",
-      price: 200,
-      category: "RETRO",
-      badge: "RETRO",
-      image:
-        "images/colonR.webp",
-    },
-    {
-      id: "liverpool-retro",
-      name: "Liverpool Retro Jersey",
-      price: 200,
-      category: "RETRO",
-      badge: "RETRO",
-      image:
-        "images/lipoolR.WEBP",
-    },
-    {
-      id: "portugal-home",
-      name: "Portugal Home",
-      price: 150,
-      category: "NATIONAL",
-      badge: "HOME",
-      image:
-        "images/portugalH.webp",
-    },
-    {
-      id: "manu-retro",
-      name: "Man United Retro",
-      price: 200,
-      category: "RETRO",
-      badge: "RETRO",
-      image:
-        "images/manuR.webp",
-    },
-    {
-      id: "spain-home",
-      name: "Spain Home Jersey",
-      price: 150,
-      category: "NATIONAL",
-      badge: "HOME",
-      image:
-        "images/spainH.webp",
-    },
-    {
-      id: "celta-retro",
-      name: "Celta Vigo Third ",
-      price: 200,
-      category: "CLUB",
-      badge: "THIRD",
-      image:
-        "images/celtaH.webp",
-    },
-    {
-      id: "barca-retro",
-      name: "Barcelona Retro",
-      price: 200,
-      category: "RETRO",
-      badge: "RETRO",
-      image:
-        "images/barcaR.webp",
-    },
-    {
-      id: "celta-retro-away",
-      name: "Celta Vigo Retro ",
-      price: 200,
-      category: "RETRO",
-      badge: "RETRO",
-      image:
-        "images/celtaA.webp",
-    },
-    {
-      id: "lakers-home",
-      name: "Lakers Home Jersey",
-      price: 180,
-      category: "BASKETBALL",
-      badge: "HOME",
-      image:
-        "images/lakers.webp",
-    },
-    {
-      id: "spain-retro",
-      name: "Spain Retro",
-      price: 200,
-      category: "RETRO",
-      badge: "RETRO",
-      image:
-        "images/spainR.webp",
-    },
-    {
-      id: "tottenham",
-      name: "Hotspurs Away",
-      price: 150,
-      category: "CLUB",
-      badge: "AWAY",
-      image:
-        "images/thps.webp",
-    },
-    {
-      id: "portugal-away",
-      name: "Portugal Away Jersey",
-      price: 150,
-      category: "NATIONAL",
-      badge: "AWAY",
-      image:
-        "images/portugalA.webp",
-    },
-    {
-      id: "spurs",
-      name: "NBA SPURS",
-      price: 180,
-      category: "BASKETBALL",
-      badge: "AWAY",
-      image:
-        "images/spurs.webp",
-    },
-    {
-      id: "palmeiras",
-      name: "Palmeiras Away Jersey",
-      price: 150,
-      category: "CLUB",
-      badge: "AWAY",
-      image:
-        "images/palmA.webp",
-    },
-    {
-      id: "golden-state-blue",
-      name: "Golden State Away",
-      price: 180,
-      category: "BASKETBALL",
-      badge: "AWAY",
-      image:
-        "images/GS.webp",
-    },
-    {
-      id: "nfl",
-      name: " NFL 1946",
-      price: 150,
-      category: "RETRO",
-      badge: "RETRO",
-      image:
-        "images/NFLblack.webp",
-    },
-    {
-      id: "nfl-49ers",
-      name: "NFL 49ERS",
-      price: 150,
-      category: "RETRO",
-      badge: "RETRO",
-      image:
-        "images/49ers.webp",
-    },
-    {
-      id: "newcastleH",
-      name: "Newcastle Home Jersey",
-      price: 150,
-      category: "CLUB",
-      badge: "HOME",
-      image:
-        "images/newcastleH.webp",
-    },
-    {
-      id: "ham-away",
-      name: "West Ham Away",
-      price: 150,
-      category: "CLUB",
-      badge: "AWAY",
-      image:
-        "images/hamA.webp",
-    },
-    {
-      id: "ghana-away",
-      name: "Ghana Black Stars Away",
-      price: 200,
-      category: "NATIONAL",
-      badge: "AWAY",
-      image:
-        "images/ghanaA.webp",
-    },
-    {
-      id: "germany",
-      name: "Germany Jersey",
-      price: 150,
-      category: "NATIONAL",
-      badge: "HOME",
-      image:
-        "images/germany.webp",
-    },
-    {
-      id: "fulhamA",
-      name: "Fulham Away Jersey",
-      price: 150,
-      category: "CLUB",
-      badge: "AWAY",
-      image:
-        "images/fulhamA.webp",
-    },
-    {
-      id: "forest-away",
-      name: "Nottingham Forest Away",
-      price: 150,
-      category: "CLUB",
-      badge: "AWAY",
-      image:
-        "images/forestA.webp",
-    },
-    {
-      id: "barca",
-      name: "Barcalona Away",
-      price: 150,
-      category: "CLUB",
-      badge: "AWAY",
-      image:
-        "images/barcaA.webp",
-    },
-    {
-      id: "bayern-home",
-      name: "Bayern Munich Home",
-      price: 150,
-      category: "CLUB",
-      badge: "HOME",
-      image:
-        "images/bayernH.webp",
-    },
-    {
-      id: "besiktas",
-      name: "Besiktas Home Jersey",
-      price: 150,
-      category: "CLUB",
-      badge: "HOME",
-      image:
-        "images/besikH.webp",
-    },
-    {
-      id: "bluesH",
-      name: "Chelsea Home Jersey",
-      price: 150,
-      category: "CLUB",
-      badge: "HOME",
-      image:
-        "images/bluesH.webp",
-    },
-    {
-      id: "arsenal",
-      name: "Arsenal Home Jersey",
-      price: 150,
-      category: "CLUB",
-      badge: "HOME",
-      image:
-        "images/arsenalH.webp",
-    },
-    {
-      id: "acmilan",
-      name: "AC Milan",
-      price: 150,
-      category: "CLUB",
-      badge: "HOME",
-      image:
-        "images/acH.webp",
-    },
-    {
-      id: "lipool-away",
-      name: "Liverpool Away",
-      price: 150,
-      category: "CLUB",
-      badge: "AWAY",
-      image:
-        "images/lipoolA.webp",
-    },
-    {
-      id: "lipool-home",
-      name: "Liverpool Home",
-      price: 150,
-      category: "CLUB",
-      badge: "HOME",
-      image:
-        "images/lipool.webp",
-    },
-    {
-      id: "NFL36-retro-away",
-      name: "NFL Retro 36",
-      price: 150,
-      category: "RETRO",
-      badge: "RETRO",
-      image:
-        "images/36.webp",
-    },
-  ];
+  const CATEGORY_MAP = {
+    club: "CLUB",
+    national: "NATIONAL",
+    retro: "RETRO",
+    basketball: "BASKETBALL",
+  };
+
+  const KIT_BADGE_MAP = {
+    home: "HOME",
+    away: "AWAY",
+    third: "THIRD",
+    retro: "RETRO",
+  };
+
+  function mapProduct(row) {
+    return {
+      id: row.id,
+      name: row.name,
+      teamName: row.team_name,
+      price: Number(row.price),
+      category: CATEGORY_MAP[row.category] || row.category?.toUpperCase(),
+      badge: KIT_BADGE_MAP[row.kit_type] || row.kit_type?.toUpperCase(),
+      image: row.image_url || "",
+      description: row.description || "",
+      isAvailable: row.is_available,
+    };
+  }
 
   const els = {
     nav: document.querySelector(".nav"),
@@ -407,10 +75,28 @@
 
   const state = {
     filter: "ALL",
-    cart: new Map(), // id -> {id, name, price, image, qty}
-    cardQty: new Map(), // id -> number (pre-add selector)
+    products: [],
+    loading: true,
+    loadError: null,
+    cart: new Map(),
+    cardQty: new Map(),
     selectedSize: "",
+    realtimeChannel: null,
   };
+
+  let supabase = null;
+
+  function initSupabase() {
+    if (!window.supabase?.createClient) {
+      console.error("Supabase client library not loaded");
+      return null;
+    }
+    if (SUPABASE_URL === "https://favarmsrajwhgrakkpei.supabase.co" || SUPABASE_ANON_KEY === "sb_publishable_aiVYOvw7ZFVvEHktfyCQjw_5FFFf_37") {
+      console.warn("Supabase credentials not configured");
+      return null;
+    }
+    return window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  }
 
   function safeParse(json, fallback) {
     try {
@@ -457,25 +143,91 @@
     return "badge--retro";
   }
 
-  function setPreviewImages() {
-    const picks = [
-      products.find((p) => p.id === "rm-home"),
-      products.find((p) => p.id === "ghana-black-stars"),
-      products.find((p) => p.id === "lakers"),
-      products.find((p) => p.id === "retro-1"),
-    ].filter(Boolean);
+  function getFilteredProducts() {
+    if (state.filter === "ALL") return state.products;
+    return state.products.filter((p) => p.category === state.filter);
+  }
 
+  function findProduct(id) {
+    return state.products.find((p) => p.id === id);
+  }
+
+  function setPreviewImages() {
+    const kitOrder = ["HOME", "AWAY", "THIRD", "RETRO"];
+    const picks = kitOrder.map((kit) => state.products.find((p) => p.badge === kit)).filter(Boolean);
+    const fallback = state.products.slice(0, 4);
     const imgs = [els.previewImg1, els.previewImg2, els.previewImg3, els.previewImg4];
+
     for (let i = 0; i < imgs.length; i++) {
-      const p = picks[i] || products[i];
-      imgs[i].src = p?.image || "";
+      const p = picks[i] || fallback[i];
+      if (p?.image) {
+        imgs[i].src = p.image;
+        imgs[i].alt = p.name;
+      }
     }
+  }
+
+  function renderSkeleton() {
+    els.grid.innerHTML = Array.from({ length: 8 })
+      .map(
+        () => `
+        <article class="card card--skeleton" aria-hidden="true">
+          <div class="skeleton skeleton--badge"></div>
+          <div class="skeleton skeleton--img"></div>
+          <div class="card__body">
+            <div class="skeleton skeleton--text"></div>
+            <div class="skeleton skeleton--text skeleton--short"></div>
+            <div class="skeleton skeleton--qty"></div>
+            <div class="skeleton skeleton--btn"></div>
+          </div>
+        </article>
+      `
+      )
+      .join("");
+  }
+
+  function renderLoadingState() {
+    els.grid.setAttribute("aria-busy", "true");
+    els.grid.innerHTML = `
+      <div class="shop-status shop-status--loading">
+        <div class="shop-status__spinner" aria-hidden="true"></div>
+        <p class="shop-status__text">Loading jerseys...</p>
+      </div>
+    `;
+  }
+
+  function renderErrorState(message) {
+    els.grid.setAttribute("aria-busy", "false");
+    els.grid.innerHTML = `
+      <div class="shop-status shop-status--error">
+        <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+        <p class="shop-status__title">Unable to load jerseys</p>
+        <p class="shop-status__text">${message}</p>
+        <button class="btn btn--primary" type="button" id="retryLoadBtn">TRY AGAIN</button>
+      </div>
+    `;
+    document.getElementById("retryLoadBtn")?.addEventListener("click", () => fetchProducts());
+  }
+
+  function renderEmptyState() {
+    els.grid.setAttribute("aria-busy", "false");
+    els.grid.innerHTML = `
+      <div class="shop-status shop-status--empty">
+        <i class="fa-solid fa-shirt" aria-hidden="true"></i>
+        <p class="shop-status__title">NO JERSEYS AVAILABLE</p>
+        <p class="shop-status__text">There are currently no jerseys in this category.</p>
+      </div>
+    `;
   }
 
   function renderProducts() {
     els.grid.setAttribute("aria-busy", "true");
-    const list =
-      state.filter === "ALL" ? products : products.filter((p) => p.category === state.filter);
+    const list = getFilteredProducts();
+
+    if (list.length === 0) {
+      renderEmptyState();
+      return;
+    }
 
     els.grid.innerHTML = list
       .map((p) => {
@@ -547,7 +299,7 @@
   }
 
   function addToCart(productId, qty) {
-    const p = products.find((x) => x.id === productId);
+    const p = findProduct(productId);
     if (!p) return;
     const q = Math.max(1, Number(qty || 1));
     const existing = state.cart.get(productId);
@@ -590,6 +342,17 @@
     state.cart.delete(productId);
     saveCart();
     renderCart();
+  }
+
+  function pruneCart() {
+    let changed = false;
+    for (const [id] of state.cart) {
+      if (!findProduct(id)) {
+        state.cart.delete(id);
+        changed = true;
+      }
+    }
+    if (changed) saveCart();
   }
 
   function renderCart() {
@@ -728,10 +491,10 @@
 
   function buildOrderMessage(values) {
     const lines = [];
-    lines.push("NEW ORDER – DON JERSEYS");
-    lines.push("=====================");
+    lines.push("NEW ORDER – DDN JERSEYS");
+    lines.push("");
     lines.push("CUSTOMER DETAILS");
-    lines.push("=====================");
+    lines.push("");
     lines.push(`Name: ${values.fullName}`);
     lines.push(`Phone: ${values.phone}`);
     lines.push("");
@@ -743,7 +506,7 @@
     }
 
     lines.push("");
-    lines.push("SIZE")
+    lines.push("SIZE");
     lines.push(values.size);
 
     const hasCustom = Boolean(values.customName || values.customNumber);
@@ -768,16 +531,106 @@
     lines.push("PAYMENT METHOD");
     lines.push(values.paymentMethod);
 
-    lines.push("=================");
+    lines.push("");
     lines.push("TOTAL AMOUNT");
     lines.push(money(cartSubtotal()));
-    lines.push("=================");
 
     return lines.join("\n");
   }
 
+  async function fetchProducts() {
+    if (!supabase) {
+      state.loading = false;
+      state.loadError = "Store configuration incomplete. Please check back soon.";
+      renderErrorState(state.loadError);
+      return;
+    }
+
+    state.loading = true;
+    state.loadError = null;
+    renderLoadingState();
+
+    try {
+      const { data, error } = await supabase
+        .from("products")
+        .select("*")
+        .eq("is_available", true)
+        .order("created_at", { ascending: false });
+
+      if (error) throw error;
+
+      state.products = (data || []).map(mapProduct);
+      state.loading = false;
+      pruneCart();
+      setPreviewImages();
+      renderProducts();
+      renderCart();
+    } catch (err) {
+      console.error("Failed to fetch products:", err);
+      state.loading = false;
+      state.loadError = "We could not connect to the store. Please try again.";
+      renderErrorState(state.loadError);
+    }
+  }
+
+  function handleRealtimePayload(payload) {
+    const { eventType, new: newRow, old: oldRow } = payload;
+
+    if (eventType === "INSERT" && newRow?.is_available) {
+      const mapped = mapProduct(newRow);
+      const exists = state.products.some((p) => p.id === mapped.id);
+      if (!exists) state.products.unshift(mapped);
+    } else if (eventType === "UPDATE") {
+      const mapped = mapProduct(newRow);
+      const idx = state.products.findIndex((p) => p.id === mapped.id);
+      if (newRow.is_available) {
+        if (idx >= 0) {
+          state.products[idx] = mapped;
+        } else {
+          state.products.unshift(mapped);
+        }
+      } else if (idx >= 0) {
+        state.products.splice(idx, 1);
+      }
+    } else if (eventType === "DELETE") {
+      const id = oldRow?.id;
+      if (id) {
+        state.products = state.products.filter((p) => p.id !== id);
+        if (state.cart.has(id)) {
+          state.cart.delete(id);
+          saveCart();
+        }
+      }
+    }
+
+    setPreviewImages();
+    renderProducts();
+    renderCart();
+  }
+
+  function setupRealtime() {
+    if (!supabase) return;
+
+    if (state.realtimeChannel) {
+      supabase.removeChannel(state.realtimeChannel);
+    }
+
+    state.realtimeChannel = supabase
+      .channel("public-products")
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "products" },
+        (payload) => handleRealtimePayload(payload)
+      )
+      .subscribe((status) => {
+        if (status === "CHANNEL_ERROR" || status === "TIMED_OUT") {
+          console.warn("Realtime connection issue, refetching products...");
+          fetchProducts();
+        }
+      });
+  }
+
   function bindEvents() {
-    // Navbar scroll blur
     const onScroll = () => {
       const scrolled = window.scrollY > 10;
       els.nav.classList.toggle("is-scrolled", scrolled);
@@ -785,7 +638,6 @@
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
-    // Filters
     for (const b of els.pills) {
       b.addEventListener("click", () => {
         setActivePill(b.dataset.filter);
@@ -797,7 +649,6 @@
     if (catBar) catBar.addEventListener("scroll", () => requestAnimationFrame(moveIndicator), { passive: true });
     window.addEventListener("resize", () => requestAnimationFrame(moveIndicator), { passive: true });
 
-    // Product grid actions (delegation)
     els.grid.addEventListener("click", (e) => {
       const t = e.target.closest("[data-action]");
       if (!t) return;
@@ -823,7 +674,6 @@
       }
     });
 
-    // Drawer open/close
     els.cartBtn.addEventListener("click", openDrawer);
     els.closeDrawerBtn.addEventListener("click", closeDrawer);
     els.drawerBackdrop.addEventListener("click", () => {
@@ -831,7 +681,6 @@
       closeDrawer();
     });
 
-    // Cart actions in drawer (delegation)
     els.cartList.addEventListener("click", (e) => {
       const t = e.target.closest("[data-action]");
       if (!t) return;
@@ -844,7 +693,6 @@
       if (action === "remove") removeCart(id);
     });
 
-    // Checkout
     els.checkoutBtn.addEventListener("click", () => {
       if (state.cart.size === 0) return;
       closeDrawer();
@@ -854,7 +702,6 @@
     els.closeModalBtn.addEventListener("click", closeModal);
     els.modalBackdrop.addEventListener("click", closeModal);
 
-    // Size toggles
     els.sizeToggles.addEventListener("click", (e) => {
       const btn = e.target.closest(".toggle");
       if (!btn) return;
@@ -866,7 +713,6 @@
       els.sizeHint.classList.remove("is-error");
     });
 
-    // Delivery toggles
     els.deliveryToggles.addEventListener("click", (e) => {
       const btn = e.target.closest(".toggle");
       if (!btn) return;
@@ -882,7 +728,6 @@
       }
     });
 
-    // Payment toggles
     els.paymentToggles.addEventListener("click", (e) => {
       const btn = e.target.closest(".toggle");
       if (!btn) return;
@@ -907,14 +752,12 @@
       openWhatsApp(msg);
     });
 
-    // Global escape key
     window.addEventListener("keydown", (e) => {
       if (e.key !== "Escape") return;
       if (els.modal.classList.contains("is-open")) return closeModal();
       if (els.drawer.classList.contains("is-open")) return closeDrawer();
     });
 
-    // WhatsApp entry points
     const waClick = (e) => {
       e.preventDefault();
       openWhatsApp(null);
@@ -922,22 +765,18 @@
     els.floatingWhatsApp.addEventListener("click", waClick);
     els.heroWhatsAppBtn.addEventListener("click", waClick);
     els.contactWhatsAppBtn.addEventListener("click", waClick);
-
-    // Prevent footer social placeholders from navigating
-    //for (const a of document.querySelectorAll(".social-link")) {
-     // a.addEventListener("click", (e) => e.preventDefault());
-   // }
   }
 
-  function init() {
-    setPreviewImages();
+  async function init() {
+    supabase = initSupabase();
     loadCart();
     renderCart();
     setActivePill("ALL");
-    renderProducts();
     bindEvents();
 
-    // Initial reveal for hero elements already in view
+    await fetchProducts();
+    setupRealtime();
+
     observeReveals();
     requestAnimationFrame(moveIndicator);
   }
@@ -948,4 +787,3 @@
     init();
   }
 })();
-
