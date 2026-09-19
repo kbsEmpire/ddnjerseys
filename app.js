@@ -4,7 +4,7 @@
   // ─── Configuration ───────────────────────────────────────────────
   const SUPABASE_URL = "https://favarmsrajwhgrakkpei.supabase.co";
   const SUPABASE_ANON_KEY = "sb_publishable_aiVYOvw7ZFVvEHktfyCQjw_5FFFf_37";
-  const WHATSAPP_NUMBER = "233503532409";
+  const WHATSAPP_NUMBER = "233245432919";
   const CART_KEY = "don_cart_v1";
 
   const money = (n) => `₵${Number(n || 0).toFixed(0)}`;
