@@ -1,24 +1,29 @@
 
 
-
 :root{
-  --bg:#0A0A0A;
-  --surface:rgba(255,255,255,0.05);
-  --glass:rgba(255,255,255,0.08);
-  --border:1px solid rgba(255,255,255,0.12);
-  --text:#FFFFFF;
-  --muted:#BFBFBF;
-  --gold:#C8A951;
-  --danger:#ff4d4d;
-  --success:#2effa6;
+  --bg:#F5F8FC;
+  --surface:rgba(255,255,255,0.78);
+  --glass:rgba(255,255,255,0.92);
+  --border:1px solid rgba(15,76,150,0.12);
+
+  --text:#102A43;
+  --muted:#64748B;
+
+  --gold:#1769D2; /* Retain variable name to avoid breaking existing CSS */
+  --danger:#E53935;
+  --success:#16A085;
+
   --blur:blur(12px);
-  --shadow-xl:0 28px 80px rgba(0,0,0,0.62);
-  --shadow-lg:0 18px 54px rgba(0,0,0,0.56);
-  --shadow-md:0 14px 40px rgba(0,0,0,0.5);
+
+  --shadow-xl:0 28px 80px rgba(15,45,90,0.14);
+  --shadow-lg:0 18px 54px rgba(15,45,90,0.12);
+  --shadow-md:0 14px 40px rgba(15,45,90,0.09);
+
   --radius-xl:22px;
   --radius-lg:18px;
   --radius-md:14px;
   --radius-sm:12px;
+
   --max:1180px;
   --ease:cubic-bezier(.2,.9,.2,1);
 }
@@ -1128,5 +1133,556 @@ button, input{font:inherit}
   }
   .modal.is-open{transform:translateY(0)}
 }
+/* =========================================
+   WHITE & BLUE THEME
+   ========================================= */
 
+body{
+  background:
+    radial-gradient(
+      900px 520px at 10% 10%,
+      rgba(23,105,210,.09),
+      transparent 55%
+    ),
+    radial-gradient(
+      760px 520px at 90% 16%,
+      rgba(96,165,250,.10),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 560px at 50% 120%,
+      rgba(255,255,255,.9),
+      transparent 60%
+    ),
+    var(--bg);
 
+  color:var(--text);
+}
+
+/* Navigation */
+.nav.is-scrolled{
+  background:rgba(255,255,255,.82);
+  border-bottom:1px solid rgba(15,76,150,.12);
+}
+
+.brand__mark{
+  color:var(--gold);
+}
+
+.nav__links{
+  border-color:rgba(15,76,150,.10);
+  background:rgba(255,255,255,.72);
+}
+
+.nav__link{
+  color:#334E68;
+}
+
+.nav__link:hover{
+  background:rgba(23,105,210,.10);
+  color:#1769D2;
+}
+
+/* Header buttons */
+.icon-btn{
+  border-color:rgba(15,76,150,.12);
+  background:rgba(255,255,255,.82);
+  color:#102A43;
+  box-shadow:0 10px 28px rgba(15,45,90,.08);
+}
+
+.icon-btn:hover{
+  border-color:rgba(23,105,210,.38);
+  box-shadow:0 16px 38px rgba(23,105,210,.12);
+}
+
+.icon-btn--ghost{
+  border-color:rgba(15,76,150,.10);
+  background:rgba(255,255,255,.70);
+}
+
+.badge{
+  color:#fff;
+  background:#1769D2;
+  border-color:rgba(255,255,255,.7);
+}
+
+/* Hero */
+.hero__bg{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7,24,48,.84),
+      rgba(7,24,48,.58),
+      rgba(7,24,48,.25)
+    ),
+    url("https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=2400&q=80");
+
+  background-size:cover;
+  background-position:center;
+}
+
+.hero__title{
+  color:#fff;
+}
+
+.hero__subtitle{
+  color:rgba(255,255,255,.88);
+}
+
+.eyebrow{
+  color:rgba(255,255,255,.82);
+}
+
+/* Buttons */
+.btn{
+  border-color:rgba(23,105,210,.18);
+  background:rgba(255,255,255,.78);
+  color:#1769D2;
+  box-shadow:0 12px 32px rgba(15,45,90,.10);
+}
+
+.btn:hover{
+  border-color:rgba(23,105,210,.45);
+  box-shadow:0 18px 44px rgba(23,105,210,.15);
+}
+
+.btn--primary{
+  background:rgba(23,105,210,.10);
+  border-color:rgba(23,105,210,.55);
+  color:#1769D2;
+  box-shadow:0 14px 38px rgba(23,105,210,.12);
+}
+
+.btn--primary:hover{
+  background:rgba(23,105,210,.16);
+  box-shadow:0 20px 54px rgba(23,105,210,.20);
+}
+
+.btn--glass{
+  background:rgba(255,255,255,.10);
+  border-color:rgba(255,255,255,.42);
+  color:#fff;
+}
+
+.btn--gold{
+  background:#1769D2;
+  border-color:#1769D2;
+  color:#fff;
+  box-shadow:0 18px 46px rgba(23,105,210,.24);
+}
+
+.btn--gold:hover{
+  background:#0F56B3;
+  border-color:#0F56B3;
+  box-shadow:0 24px 60px rgba(23,105,210,.30);
+}
+
+/* Hero trust pills */
+.trust-pill{
+  border-color:rgba(255,255,255,.20);
+  background:rgba(255,255,255,.12);
+  color:rgba(255,255,255,.94);
+}
+
+.trust-pill i{
+  color:#8CC4FF;
+}
+
+/* Product section */
+.section-title{
+  color:#102A43;
+}
+
+.section-subtitle{
+  color:#64748B;
+}
+
+.meta-chip{
+  border-color:rgba(15,76,150,.10);
+  background:rgba(255,255,255,.78);
+  color:#334E68;
+}
+
+.meta-chip i{
+  color:#1769D2;
+}
+
+/* Categories */
+.category-bar{
+  border-color:rgba(15,76,150,.10);
+  background:rgba(255,255,255,.78);
+}
+
+.pill{
+  border-color:rgba(23,105,210,.28);
+  background:rgba(255,255,255,.90);
+  color:#1769D2;
+}
+
+.pill:hover{
+  box-shadow:0 12px 30px rgba(23,105,210,.12);
+}
+
+.pill.is-active{
+  background:#1769D2;
+  color:#fff;
+  border-color:#1769D2;
+}
+
+.category-indicator{
+  background:rgba(23,105,210,.10);
+  border-color:rgba(23,105,210,.20);
+  box-shadow:0 10px 30px rgba(23,105,210,.10);
+}
+
+/* Product cards */
+.card{
+  border-color:rgba(15,76,150,.10);
+  background:rgba(255,255,255,.94);
+  box-shadow:0 12px 36px rgba(15,45,90,.08);
+}
+
+.card:hover{
+  background:#fff;
+  border-color:rgba(23,105,210,.26);
+  box-shadow:0 22px 60px rgba(15,45,90,.14);
+}
+
+.card__img{
+  background:
+    radial-gradient(
+      420px 220px at 50% 60%,
+      rgba(23,105,210,.06),
+      transparent 60%
+    ),
+    radial-gradient(
+      420px 220px at 50% 120%,
+      rgba(96,165,250,.10),
+      transparent 60%
+    );
+}
+
+.card__name{
+  color:#102A43;
+}
+
+.card__price{
+  color:#1769D2;
+}
+
+.badge--home{
+  background:#1769D2;
+  color:#fff;
+}
+
+.badge--away{
+  background:#102A43;
+  color:#fff;
+}
+
+.badge--third{
+  background:#E8F2FF;
+  color:#1769D2;
+}
+
+.badge--retro{
+  background:#64748B;
+  color:#fff;
+}
+
+/* Quantity selector */
+.qty{
+  border-color:rgba(15,76,150,.10);
+  background:#F5F8FC;
+}
+
+.qty__btn{
+  border-color:rgba(15,76,150,.12);
+  background:#fff;
+  color:#1769D2;
+}
+
+.qty__btn:hover{
+  border-color:rgba(23,105,210,.42);
+  background:#EAF3FF;
+}
+
+.qty__val{
+  color:#102A43;
+}
+
+/* Contact section */
+.contact-card{
+  border-color:rgba(15,76,150,.10);
+  background:rgba(255,255,255,.92);
+  box-shadow:var(--shadow-xl);
+}
+
+.contact-note{
+  border-color:rgba(15,76,150,.10);
+  background:#F5F8FC;
+}
+
+.contact-note__label{
+  color:#64748B;
+}
+
+.contact-note__value{
+  color:#102A43;
+}
+
+.glow-orb--gold{
+  background:rgba(23,105,210,.18);
+}
+
+.glow-orb--green{
+  background:rgba(96,165,250,.16);
+}
+
+.contact-lines{
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(23,105,210,.07),
+      transparent
+    ),
+    radial-gradient(
+      600px 220px at 68% 30%,
+      rgba(23,105,210,.06),
+      transparent 60%
+    );
+}
+
+/* Footer */
+.footer{
+  border-top:1px solid rgba(15,76,150,.10);
+  background:rgba(255,255,255,.88);
+}
+
+.footer__logo{
+  color:#1769D2;
+}
+
+.footer__tag{
+  color:#64748B;
+}
+
+.footer-bottom p{
+  color:#64748B;
+}
+
+.social-link{
+  border-color:rgba(15,76,150,.10);
+  background:rgba(255,255,255,.86);
+  color:#334E68;
+}
+
+.social-link i{
+  color:#1769D2;
+}
+
+.social-link:hover{
+  border-color:rgba(23,105,210,.35);
+}
+
+/* Cart drawer */
+.backdrop,
+.modal-backdrop{
+  background:rgba(15,35,65,.42);
+}
+
+.drawer{
+  border-left-color:rgba(15,76,150,.12);
+  background:rgba(255,255,255,.96);
+  box-shadow:0 28px 80px rgba(15,45,90,.20);
+}
+
+.drawer__header{
+  border-bottom-color:rgba(15,76,150,.10);
+}
+
+.drawer__title{
+  color:#102A43;
+}
+
+.drawer__subtitle{
+  color:#64748B;
+}
+
+.drawer__footer{
+  border-top-color:rgba(15,76,150,.10);
+  background:rgba(245,248,252,.92);
+}
+
+.drawer__note{
+  color:#64748B;
+}
+
+.cart-empty{
+  border-color:rgba(15,76,150,.10);
+  background:#F5F8FC;
+  color:#64748B;
+}
+
+.cart-item{
+  border-color:rgba(15,76,150,.10);
+  background:#fff;
+}
+
+.cart-item__img{
+  border-color:rgba(15,76,150,.10);
+  background:#F5F8FC;
+}
+
+.cart-item__name{
+  color:#102A43;
+}
+
+.cart-item__price{
+  color:#1769D2;
+}
+
+.remove-btn{
+  border-color:rgba(15,76,150,.10);
+  background:#F5F8FC;
+  color:#334E68;
+}
+
+/* Checkout modal */
+.modal{
+  border-color:rgba(15,76,150,.12);
+  background:rgba(255,255,255,.97);
+  box-shadow:0 28px 80px rgba(15,45,90,.20);
+}
+
+.modal__header{
+  border-bottom-color:rgba(15,76,150,.10);
+  background:#F5F8FC;
+}
+
+.modal__title{
+  color:#102A43;
+}
+
+.modal__subtitle{
+  color:#64748B;
+}
+
+.form-section__title{
+  color:#1769D2;
+}
+
+.field__label{
+  color:#475569;
+}
+
+.field__input{
+  border-color:rgba(15,76,150,.14);
+  background:#F8FAFD;
+  color:#102A43;
+}
+
+.field__input::placeholder{
+  color:#94A3B8;
+}
+
+.field__input:focus{
+  border-color:rgba(23,105,210,.48);
+  box-shadow:0 0 0 4px rgba(23,105,210,.10);
+}
+
+.divider{
+  background:rgba(15,76,150,.10);
+}
+
+.toggle{
+  border-color:rgba(15,76,150,.12);
+  background:#F8FAFD;
+  color:#334E68;
+}
+
+.toggle:hover{
+  border-color:rgba(23,105,210,.38);
+}
+
+.toggle.is-active{
+  background:#1769D2;
+  color:#fff;
+  border-color:#1769D2;
+}
+
+.hint{
+  color:#64748B;
+}
+
+.payment-instructions{
+  border-color:rgba(15,76,150,.10);
+  background:#F5F8FC;
+}
+
+.payment-instructions__title{
+  color:#64748B;
+}
+
+.payment-instructions__value{
+  color:#102A43;
+}
+
+/* Floating WhatsApp button */
+.wa-float{
+  background:#1769D2;
+  border-color:rgba(255,255,255,.65);
+  box-shadow:0 16px 46px rgba(23,105,210,.28);
+}
+
+.wa-float__icon{
+  color:#fff;
+  text-shadow:0 0 18px rgba(255,255,255,.28);
+}
+
+.wa-float:hover{
+  border-color:#fff;
+  box-shadow:0 20px 60px rgba(23,105,210,.38);
+}
+
+.wa-tooltip{
+  background:rgba(255,255,255,.96);
+  border-color:rgba(15,76,150,.12);
+  color:#102A43;
+}
+
+/* Loading, empty and error states */
+.shop-status{
+  border-color:rgba(15,76,150,.10);
+  background:rgba(255,255,255,.84);
+}
+
+.shop-status i{
+  color:#1769D2;
+}
+
+.shop-status__title{
+  color:#102A43;
+}
+
+.shop-status__text{
+  color:#64748B;
+}
+
+.shop-status__spinner{
+  border-color:rgba(23,105,210,.14);
+  border-top-color:#1769D2;
+}
+
+/* Skeleton loading */
+.skeleton{
+  background:linear-gradient(
+    90deg,
+    rgba(15,76,150,.04) 25%,
+    rgba(23,105,210,.10) 50%,
+    rgba(15,76,150,.04) 75%
+  );
+  background-size:200% 100%;
+}
